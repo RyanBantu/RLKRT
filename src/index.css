@@ -124,6 +124,94 @@ button {
   transform: scaleX(1);
 }
 
+/* mobile menu */
+.menu-toggle {
+  display: none;
+}
+@media (max-width: 759px) {
+  .menu-toggle {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    place-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    margin-right: -8px;
+    padding: 0;
+    background: none;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .menu-toggle i {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--ink);
+    transition: transform 0.25s, opacity 0.2s, background 0.2s;
+  }
+  .site-header.is-open .menu-toggle i:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+    background: var(--amber);
+  }
+  .site-header.is-open .menu-toggle i:nth-child(2) {
+    opacity: 0;
+  }
+  .site-header.is-open .menu-toggle i:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+    background: var(--amber);
+  }
+  .site-header.is-open {
+    background: rgba(246, 243, 236, 0.98);
+  }
+  .site-header .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 4px 16px 18px;
+    background: rgba(246, 243, 236, 0.98);
+    border-bottom: 1px solid var(--tan);
+    box-shadow: 0 12px 24px rgba(40, 40, 40, 0.08);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.2s, transform 0.2s, visibility 0s 0.2s;
+  }
+  .site-header.is-open .site-nav {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .site-header .site-nav a {
+    padding: 14px 0;
+    font-size: 15px;
+    letter-spacing: 0.14em;
+    border-top: 1px solid rgba(203, 180, 149, 0.55);
+  }
+  .site-header .site-nav a::after {
+    top: 50%;
+    bottom: auto;
+    left: auto;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: translateY(-50%) scale(0);
+  }
+  .site-header .site-nav a:hover::after {
+    transform: translateY(-50%) scale(0);
+  }
+  .site-header .site-nav a.active::after {
+    transform: translateY(-50%) scale(1);
+  }
+}
+
 /* ---------------------------------------------------------------- landing → NetLynx */
 .scout-cta {
   position: relative;

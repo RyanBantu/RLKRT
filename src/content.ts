@@ -29,6 +29,7 @@ export const teardownSlider = {
 };
 
 export const navLinks = { camera: 'The Camera', netlynx: 'NetLynx', team: 'Team' };
+export const menuLabels = { open: 'Open menu', close: 'Close menu' };
 
 export const team = {
   docTitle: 'Team · Rugged Lynx',
