@@ -39,7 +39,15 @@ export function useSmoothScroll(stageId: string) {
       else window.scrollTo({ top: y });
     };
 
+    nav.lock = (on: boolean) => {
+      if (on) lenis?.stop();
+      else lenis?.start();
+      document.documentElement.classList.toggle('scroll-locked', on);
+    };
+
     return () => {
+      nav.lock(false);
+      nav.lock = () => {};
       st.kill();
       gsap.ticker.remove(raf);
       lenis?.destroy();

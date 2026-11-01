@@ -1,4 +1,4 @@
-import { Suspense, useRef } from 'react';
+import { memo, Suspense, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { ContactShadows, Environment, Lightformer } from '@react-three/drei';
 import * as THREE from 'three';
@@ -24,7 +24,7 @@ function Studio() {
   );
 }
 
-export default function Scene({ active }: { active: boolean }) {
+function Scene({ active }: { active: boolean }) {
   const model = useRef<THREE.Group>(null);
   return (
     <Canvas
@@ -52,3 +52,6 @@ export default function Scene({ active }: { active: boolean }) {
     </Canvas>
   );
 }
+
+// Stage re-renders every second for its clock; the canvas only cares about `active`.
+export default memo(Scene);

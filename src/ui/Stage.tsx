@@ -4,6 +4,7 @@ import { brand, callouts, chapters, hero, stamp } from '../content';
 import { calloutEls, drag, LAST, layout, nav, reducedMotion, scroll } from '../store';
 import { chapterWeight } from '../three/timeline';
 import { RailSlider } from './RailSlider';
+import { TrueFourKButton } from '../features/true4k/OpenButton';
 
 const Scene = lazy(() => import('../three/Scene'));
 
@@ -18,7 +19,7 @@ function hasWebGL() {
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
-export function Stage() {
+export function Stage({ paused = false }: { paused?: boolean }) {
   const sectionRef = useRef<HTMLElement>(null);
   const cardRefs = useRef<HTMLElement[]>([]);
   const railRefs = useRef<HTMLButtonElement[]>([]);
@@ -141,7 +142,7 @@ export function Stage() {
           >
             {fontsReady && (
               <Suspense fallback={null}>
-                <Scene active={active} />
+                <Scene active={active && !paused} />
               </Suspense>
             )}
           </div>
@@ -198,10 +199,13 @@ export function Stage() {
                       </div>
                     ))}
                   </dl>
-                  <button className="cue" onClick={() => nav.toChapter(1)}>
-                    <span className="cue-line" aria-hidden />
-                    {hero.cue}
-                  </button>
+                  <div className="hero-actions">
+                    <TrueFourKButton />
+                    <button className="cue" onClick={() => nav.toChapter(1)}>
+                      <span className="cue-line" aria-hidden />
+                      {hero.cue}
+                    </button>
+                  </div>
                 </>
               ) : (
                 <>

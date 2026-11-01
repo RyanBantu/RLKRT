@@ -32,4 +32,6 @@ export const nav = {
   toChapter: (_k: number) => {},
   /** Jump straight to a chapter-space position (0..LAST), e.g. while scrubbing the slider. */
   toPosition: (_t: number) => {},
+  /** Freeze page scrolling (smooth scroll included), e.g. under a full-screen overlay. */
+  lock: (_on: boolean) => {},
 };
