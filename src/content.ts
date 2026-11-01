@@ -9,14 +9,14 @@ export const brand = {
 };
 
 export const hero = {
-  eyebrow: 'RL-1 · 4K infrared trail camera',
+  eyebrow: 'RL-1 · True 4K infrared trail camera',
   headline: 'Nothing escapes the Lynx',
   brief:
     'A bark-camo field camera that wakes in a tenth of a second, sees 30 metres into the dark without a visible glow, and runs for months on a tray of AAs.',
   stats: [
     { value: '0.1 s', label: 'trigger' },
     { value: '30 m', label: 'night range' },
-    { value: '4K', label: 'video' },
+    { value: 'True 4K', label: 'video' },
   ],
   cue: 'Scroll to take it apart',
 };
@@ -80,11 +80,11 @@ export const chapters: Chapter[] = [
     rail: 'Optics',
     eyebrow: '02 · Optics',
     title: 'Fast glass, big pixels',
-    body: 'A six-element f/1.6 lens focuses onto a back-side-illuminated sensor. A switching IR-cut filter gives true colour by day and full infrared sensitivity at night.',
+    body: 'A six-element f/1.6 lens focuses onto a back-side-illuminated sensor. A switching infrared-cut filter gives true colour by day and full infrared sensitivity at night.',
     specs: [
       { value: 'f/1.6', label: '6-element glass' },
       { value: '1/1.8″', label: 'BSI CMOS' },
-      { value: 'IR-cut', label: 'auto day / night' },
+      { value: 'Infrared-cut', label: 'auto day / night' },
     ],
   },
   {
@@ -158,13 +158,13 @@ export const callouts: Callout[] = [
   { id: 'latch', chapter: 1, label: 'Over-centre latches', side: 'right', lift: 'down' },
   { id: 'housing', chapter: 1, label: 'Bark-camo housing', side: 'left', lift: 'down' },
   { id: 'lens', chapter: 2, label: 'Lens', value: 'f/1.6 · 6 elements', side: 'right' },
-  { id: 'irCut', chapter: 2, label: 'IR-cut filter', value: 'auto switching', side: 'left' },
+  { id: 'irCut', chapter: 2, label: 'Infrared-cut filter', value: 'auto switching', side: 'left' },
   { id: 'sensor', chapter: 2, label: 'Image sensor', value: '1/1.8″ BSI CMOS', side: 'right', lift: 'down' },
-  { id: 'leds', chapter: 3, label: 'IR array', value: '24 × 940 nm', side: 'left' },
+  { id: 'leds', chapter: 3, label: 'Infrared array', value: '24 × 940 nm', side: 'left' },
   { id: 'range', chapter: 3, label: 'Night range', value: '30 m', side: 'right', lift: 'down' },
   { id: 'fresnel', chapter: 4, label: 'Fresnel lens', value: '120° · 3 zones', side: 'right' },
   { id: 'pirCan', chapter: 4, label: 'Dual-element PIR', value: '0.1 s trigger', side: 'left', lift: 'down' },
-  { id: 'isp', chapter: 5, label: 'Image processor', value: '4K30 ISP', side: 'left' },
+  { id: 'isp', chapter: 5, label: 'Image processor', value: 'True 4K30 ISP', side: 'left' },
   { id: 'mcu', chapter: 5, label: 'Wake MCU', value: '4 µA sleep', side: 'right', lift: 'down' },
   { id: 'pmic', chapter: 5, label: 'PMIC', value: '12 V / AA', side: 'left', lift: 'down' },
   { id: 'sd', chapter: 5, label: 'microSD', value: 'up to 512 GB', side: 'right', lift: 'down' },

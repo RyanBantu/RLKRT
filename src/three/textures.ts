@@ -210,7 +210,7 @@ export function pcbTextures() {
   g.textAlign = 'left';
   g.fillText('+12V', toPx(-0.4, -5.75)[0] - 0.7 * S, toPx(0, -5.2)[1]);
   g.fillText('PIR', toPx(-1.9, -4.3)[0] - 0.2 * S, toPx(0, -4.3)[1]);
-  g.fillText('IR / CAM', toPx(-0.8, 5.0)[0], toPx(0, 5.05)[1]);
+  g.fillText('INFRARED / CAM', toPx(-0.8, 5.0)[0], toPx(0, 5.05)[1]);
 
   const color = new THREE.CanvasTexture(c);
   color.colorSpace = THREE.SRGBColorSpace;
