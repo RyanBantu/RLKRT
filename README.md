@@ -53,7 +53,7 @@ iNaturalist, OpenStreetMap Overpass, USGS PAD-US.
 
 ### Secrets
 
-Copy `.env.example` to `.env.local` and fill in:
+Create `.env.local` in the project root with:
 
 ```
 EBIRD_API_KEY=...        # https://ebird.org/api/keygen
