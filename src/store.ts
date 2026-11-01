@@ -15,6 +15,10 @@ export const scroll = {
   ts: 0, // smoothed t, what everything renders from
 };
 
+// Phones only: the clear band (px from the top of the stage) between the header and the chapter cards,
+// where the model is framed. Measured by <Stage/>; 0 means not measured yet.
+export const layout = { top: 0, bottom: 0 };
+
 export const drag = { yaw: 0, pitch: 0, active: false };
 
 // 3D anchor points for the callouts, registered by <Anchor/>.

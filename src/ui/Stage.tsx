@@ -1,7 +1,7 @@
 import { lazy, Suspense, useEffect, useRef, useState, type PointerEvent } from 'react';
 import gsap from 'gsap';
 import { brand, callouts, chapters, hero, stamp } from '../content';
-import { calloutEls, drag, LAST, nav, reducedMotion, scroll } from '../store';
+import { calloutEls, drag, LAST, layout, nav, reducedMotion, scroll } from '../store';
 import { chapterWeight } from '../three/timeline';
 import { RailSlider } from './RailSlider';
 
@@ -48,6 +48,26 @@ export function Stage() {
   useEffect(() => {
     const id = setInterval(() => setNow(new Date()), 1000);
     return () => clearInterval(id);
+  }, []);
+
+  // Phones: keep the model and rail in the band between the header and the tallest card.
+  useEffect(() => {
+    const sticky = sectionRef.current?.querySelector<HTMLElement>('.stage-sticky');
+    const cardsEl = sectionRef.current?.querySelector<HTMLElement>('.cards');
+    if (!sticky || !cardsEl) return;
+    const measure = () => {
+      const header = document.querySelector('.site-header')?.getBoundingClientRect().height ?? 0;
+      const tallest = Math.max(0, ...cardRefs.current.map((el) => el?.offsetHeight ?? 0));
+      const cardsBottom = sticky.clientHeight - cardsEl.offsetTop;
+      layout.top = header + 6;
+      layout.bottom = sticky.clientHeight - cardsBottom - tallest - 10;
+      sticky.style.setProperty('--free-top', `${layout.top}px`);
+      sticky.style.setProperty('--free-bottom', `${layout.bottom}px`);
+    };
+    const ro = new ResizeObserver(measure);
+    ro.observe(sticky);
+    cardRefs.current.forEach((el) => el && ro.observe(el));
+    return () => ro.disconnect();
   }, []);
 
   // Per-frame DOM updates: card crossfades, rail state, progress line, stamp part number.
