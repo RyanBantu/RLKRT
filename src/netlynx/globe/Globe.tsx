@@ -15,7 +15,7 @@ type Props = {
   relief: Relief | null;
   reducedMotion: boolean;
   active: boolean;
-  /** Bumped by the parent to recentre on the target after a drag. */
+  /** Bumped by the parent to recenter on the target after a drag. */
   recenter: number;
   onLocked?: () => void;
 };
@@ -239,7 +239,7 @@ function Birds({ birds }: { birds: BirdPoint[] }) {
   return <points geometry={geo} material={mat} renderOrder={5} />;
 }
 
-/** Drives globe rotation and camera distance: idle spin, fly-to, drag, recentre. */
+/** Drives globe rotation and camera distance: idle spin, fly-to, drag, recenter. */
 function Rig({ view, target, reducedMotion, recenter, onLocked, children }: {
   view: View; target: GlobeTarget | null; reducedMotion: boolean; recenter: number; onLocked?: () => void; children: ReactNode;
 }) {

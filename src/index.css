@@ -748,7 +748,7 @@ button {
   transform: scale(1.35);
 }
 
-/* drag handle riding the rail: x is centred on the dot column (track sits 4px in from the right) */
+/* drag handle riding the rail: x is centered on the dot column (track sits 4px in from the right) */
 .rail-thumb {
   position: absolute;
   top: 0;

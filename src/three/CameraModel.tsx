@@ -7,7 +7,7 @@ import { live } from './rig';
 import { ext, mirrorHalf, oct, scalePts, shape, cylZ, type P2 } from './shapes';
 import { cellWrap, chipTop, fresnelBump, glowSprite, passives, pcbParts, pcbTextures, PCB } from './textures';
 
-// Units are centimetres. The camera is 10 × 16 × 6.5 cm, centred on the origin,
+// Units are centimeters. The camera is 10 × 16 × 6.5 cm, centered on the origin,
 // lens looking down +z. The door/body seam sits at z ≈ 0.9.
 
 // ---------------------------------------------------------------------------

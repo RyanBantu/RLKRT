@@ -218,7 +218,7 @@ export function tkArea(src: Img, tw: number, th: number): Img {
 const catmull = (p0: number, p1: number, p2: number, p3: number, t: number) =>
   0.5 * (2 * p1 + (-p0 + p2) * t + (2 * p0 - 5 * p1 + 4 * p2 - p3) * t * t + (-p0 + 3 * p1 - 3 * p2 + p3) * t * t * t);
 
-/** Catmull-Rom bicubic upscale, pixel-centre aligned: in-camera "4K" interpolation. */
+/** Catmull-Rom bicubic upscale, pixel-center aligned: in-camera "4K" interpolation. */
 export function tkCubic(src: Img, tw: number, th: number): Img {
   const { w: sw, h: sh, d } = src;
   const tmp = new Float32Array(tw * sh * 4);

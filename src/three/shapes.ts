@@ -12,7 +12,7 @@ export function oct(w: number, h: number, c: number, cx = 0, cy = 0): P2[] {
   ];
 }
 
-/** Build a symmetric outline from its right half (top-centre → bottom-centre, clockwise). */
+/** Build a symmetric outline from its right half (top-center → bottom-center, clockwise). */
 export function mirrorHalf(right: P2[]): P2[] {
   const left = right.slice().reverse().map(([x, y]) => [-x, y] as P2).filter(([x]) => x !== 0);
   return [...right, ...left];
@@ -37,7 +37,7 @@ export function shape(outer: P2[] | { c: P2; r: number }, holes: Hole[] = []) {
   return s;
 }
 
-// UVs in centimetres. Side walls run the texture's vertical grain along the wall height,
+// UVs in centimeters. Side walls run the texture's vertical grain along the wall height,
 // so bark furrows stay upright all the way round the housing.
 const uvGen = {
   generateTopUV(_g: THREE.ExtrudeGeometry, v: number[], a: number, b: number, c: number) {

@@ -41,7 +41,7 @@ export function drawRelief(g: ElevationGrid, size: number, fadeEdges = false) {
   const max = Math.max(...g.values);
   const range = Math.max(1, max - min);
   const step = contourStep(range);
-  const metresPerPx = (g.halfKm * 2000) / size;
+  const metersPerPx = (g.halfKm * 2000) / size;
   const exag = Math.min(6, Math.max(1.5, 400 / range)); // flatter ground gets more exaggeration
   const lx = -Math.SQRT1_2 * Math.cos(Math.PI / 4);
   const ly = -Math.SQRT1_2 * Math.cos(Math.PI / 4);
@@ -51,8 +51,8 @@ export function drawRelief(g: ElevationGrid, size: number, fadeEdges = false) {
   for (let y = 0; y < size; y++) {
     for (let x = 0; x < size; x++) {
       const k = y * size + x;
-      const ex = (e[y * size + Math.min(size - 1, x + 1)] - e[y * size + Math.max(0, x - 1)]) / (2 * metresPerPx);
-      const ey = (e[Math.min(size - 1, y + 1) * size + x] - e[Math.max(0, y - 1) * size + x]) / (2 * metresPerPx);
+      const ex = (e[y * size + Math.min(size - 1, x + 1)] - e[y * size + Math.max(0, x - 1)]) / (2 * metersPerPx);
+      const ey = (e[Math.min(size - 1, y + 1) * size + x] - e[Math.max(0, y - 1) * size + x]) / (2 * metersPerPx);
       const nx = -ex * exag;
       const ny = -ey * exag;
       const nl = Math.hypot(nx, ny, 1);
@@ -74,7 +74,7 @@ export function drawRelief(g: ElevationGrid, size: number, fadeEdges = false) {
   return { canvas: c, step, min, max };
 }
 
-/** Mean absolute grade between neighbouring grid points, in degrees. */
+/** Mean absolute grade between neighboring grid points, in degrees. */
 export function meanGrade(g: ElevationGrid) {
   const n = g.n;
   const spacing = (g.halfKm * 2000) / (n - 1);

@@ -69,7 +69,7 @@ export const GAME: GameSpecies[] = [
       height: '3–4 ft, or 7–9 ft angled down to keep it out of reach and sight.',
       angle: '10–15 ft off the trail at about 45°, facing north or south so sunrise and sunset don’t wash out the frame.',
       trigger: 'High sensitivity, 3-shot burst, 30 s delay on trails; 5–10 s delay over scrapes.',
-      mode: 'Photo bursts most of the year; 10–20 s video on scrapes in the rut to read buck behaviour.',
+      mode: 'Photo bursts most of the year; 10–20 s video on scrapes in the rut to read buck behavior.',
     },
   },
   {
@@ -149,7 +149,7 @@ export const GAME: GameSpecies[] = [
       height: '6–8 ft angled down, in a steel security box and cable-locked: bears chew cameras.',
       angle: 'Quartering away from the trail so the camera isn’t the first thing a bear smells.',
       trigger: 'Medium sensitivity, 3-shot burst, 1 min delay.',
-      mode: 'Video; bear behaviour reads better in motion.',
+      mode: 'Video; bear behavior reads better in motion.',
     },
   },
   {

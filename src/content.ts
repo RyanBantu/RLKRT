@@ -12,7 +12,7 @@ export const hero = {
   eyebrow: 'RL-1 · True 4K infrared trail camera',
   headline: 'Nothing escapes the Lynx',
   brief:
-    'A bark-camo field camera that wakes in a tenth of a second, sees 30 metres into the dark without a visible glow, and runs for months on a tray of AAs.',
+    'A bark-camo field camera that wakes in a tenth of a second, sees 30 meters into the dark without a visible glow, and runs for months on a tray of AAs.',
   stats: [
     { value: '0.1 s', label: 'trigger' },
     { value: '30 m', label: 'night range' },
@@ -68,7 +68,7 @@ export const chapters: Chapter[] = [
     rail: 'Shell',
     eyebrow: '01 · The shell',
     title: 'Built to be left out there',
-    body: 'Stainless-pinned hinges carry a full-face door. Two over-centre latches pull it down onto a continuous silicone gasket, and a lock tab takes a padlock or cable.',
+    body: 'Stainless-pinned hinges carry a full-face door. Two over-center latches pull it down onto a continuous silicone gasket, and a lock tab takes a padlock or cable.',
     specs: [
       { value: 'IP66', label: 'sealed housing' },
       { value: '2 + 2', label: 'hinges · latches' },
@@ -80,7 +80,7 @@ export const chapters: Chapter[] = [
     rail: 'Optics',
     eyebrow: '02 · Optics',
     title: 'Fast glass, big pixels',
-    body: 'A six-element f/2.0 lens with a 133° field of view focuses onto a Sony back-side-illuminated sensor. A switching infrared-cut filter gives true colour by day and full infrared sensitivity at night.',
+    body: 'A six-element f/2.0 lens with a 133° field of view focuses onto a Sony back-side-illuminated sensor. A switching infrared-cut filter gives true color by day and full infrared sensitivity at night.',
     specs: [
       { value: 'f/2.0', label: '6-element glass' },
       { value: '1/1.8″', label: 'BSI CMOS' },
@@ -148,14 +148,14 @@ export type Callout = {
   label: string;
   value?: string;
   side?: 'left' | 'right';
-  lift?: 'up' | 'down'; // which way the leader bends, to keep neighbouring labels apart
+  lift?: 'up' | 'down'; // which way the leader bends, to keep neighboring labels apart
 };
 
 // `id` must match an <Anchor id> inside the 3D model.
 export const callouts: Callout[] = [
   { id: 'hinge', chapter: 1, label: 'Stainless hinge pins', side: 'left' },
   { id: 'gasket', chapter: 1, label: 'IP66 silicone gasket', side: 'right' },
-  { id: 'latch', chapter: 1, label: 'Over-centre latches', side: 'right', lift: 'down' },
+  { id: 'latch', chapter: 1, label: 'Over-center latches', side: 'right', lift: 'down' },
   { id: 'housing', chapter: 1, label: 'Bark-camo housing', side: 'left', lift: 'down' },
   { id: 'lens', chapter: 2, label: 'Lens', value: 'f/2.0 · 6 elements', side: 'right' },
   { id: 'irCut', chapter: 2, label: 'Infrared-cut filter', value: 'auto switching', side: 'left' },
@@ -231,9 +231,9 @@ export const trueFourK = {
     },
     {
       title: 'So where do the other pixels come from?',
-      body: 'To save a “4K” file, the camera splits each real pixel into four and fills three of them in by averaging the neighbours. Three in every four pixels are guesses.',
+      body: 'To save a “4K” file, the camera splits each real pixel into four and fills three of them in by averaging the neighbors. Three in every four pixels are guesses.',
       counter: '',
-      canvas: 'Each 2 megapixel pixel splits into four. One keeps its real value, outlined in cream. Three are guessed from neighbouring pixels, outlined in dashed amber.',
+      canvas: 'Each 2 megapixel pixel splits into four. One keeps its real value, outlined in cream. Three are guessed from neighboring pixels, outlined in dashed amber.',
     },
     {
       title: 'Guesses aren’t detail',

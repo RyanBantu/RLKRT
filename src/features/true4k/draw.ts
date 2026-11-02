@@ -41,7 +41,7 @@ type View = { x: number; y: number; w: number; h: number };
 
 /**
  * Draws `img` (which covers the whole 640 × 360 crop at its own resolution) so that crop rect `v`
- * fills dest rect d, nearest-neighbour, with a pixel grid once pixels are big enough to see.
+ * fills dest rect d, nearest-neighbor, with a pixel grid once pixels are big enough to see.
  */
 export function tkZoom(ctx: CanvasRenderingContext2D, img: Img, v: View, dx: number, dy: number, dw: number, dh: number, grid = true) {
   const k = img.w / TK.W; // image px per crop px
@@ -94,7 +94,7 @@ export function tkLabel(ctx: CanvasRenderingContext2D, text: string, x: number, 
 }
 
 const fullView: View = { x: 0, y: 0, w: TK.W, h: TK.H };
-/** 16:9 view centred on the tag's small print, `w` crop pixels wide. */
+/** 16:9 view centered on the tag's small print, `w` crop pixels wide. */
 const printView = (w: number): View => ({ x: TK.print.x - w / 2, y: TK.print.y - (w * 9) / 16 / 2, w, h: (w * 9) / 16 });
 const lerpView = (a: View, b: View, t: number): View => {
   // interpolate the zoom in log space so it feels constant-speed
@@ -186,7 +186,7 @@ export function step3(ctx: CanvasRenderingContext2D, t: number, w = CW, h = CH, 
   }
   ctx.setLineDash([]);
 
-  // neighbour-average arrows into one guessed pixel
+  // neighbor-average arrows into one guessed pixel
   if (arrows > 0) {
     const ci = cols / 2 + 1, cj = Math.floor(rows / 2) - (cols < 16 ? 1 : 0); // the cell we explain
     const tx = ci * cell + (cell * 3) / 4, ty = cj * cell + (cell * 3) / 4; // its bottom-right (guessed) quarter
@@ -221,7 +221,7 @@ export function step3(ctx: CanvasRenderingContext2D, t: number, w = CW, h = CH, 
     ctx.strokeRect(ci * cell + cell / 2, cj * cell + cell / 2, cell / 2, cell / 2);
     ctx.restore();
     if (w >= 900) {
-      const text = 'AVG OF NEIGHBOURS';
+      const text = 'AVG OF NEIGHBORS';
       const lw = (text.length * 11.5 + 24) * ui;
       const lh = 34 * ui;
       if (tx + cell / 2 + lw < w - 8) tkLabel(ctx, text, tx + cell / 2, ty - lh / 2, 'left');

@@ -81,7 +81,7 @@ export function Projector() {
       let side = c.side ?? 'right';
       if (side === 'right' && x + reach > rightLimit) side = 'left';
       else if (side === 'left' && x - reach < leftLimit) side = 'right';
-      // phones: labels point away from the model's centre (it sits 14px left of mid) so leaders never cross
+      // phones: labels point away from the model's center (it sits 14px left of mid) so leaders never cross
       if (mobile) side = x < size.width / 2 - 14 ? 'left' : 'right';
       el.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, 0)`;
       // phones: slide the label along its leader so it never leaves the screen or runs under the rail

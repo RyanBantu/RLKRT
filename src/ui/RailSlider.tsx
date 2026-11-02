@@ -15,7 +15,7 @@ export function RailSlider({ railRef }: { railRef: RefObject<HTMLElement | null>
   const grabOffset = useRef(0);
   const lastK = useRef(-1);
 
-  // Measure the first and last dot centres (relative to the rail) so the handle runs dot to dot.
+  // Measure the first and last dot centers (relative to the rail) so the handle runs dot to dot.
   useEffect(() => {
     const rail = railRef.current;
     if (!rail) return;

@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
 // ---------------------------------------------------------------------------
-// Main PCB layout (cm, board-local; origin at board centre, +y up).
+// Main PCB layout (cm, board-local; origin at board center, +y up).
 // Shared by the canvas textures and the 3D component placement so pads line up.
 // ---------------------------------------------------------------------------
 export const PCB = { w: 8.6, h: 13, ppc: 120 };
@@ -98,7 +98,7 @@ function buildTraces(): Pt[][] {
 
 let pcbCache: { color: THREE.CanvasTexture; signal: THREE.CanvasTexture } | null = null;
 
-/** Colour map (solder mask, copper, gold, silkscreen) and a data map for the signal shader. */
+/** Color map (solder mask, copper, gold, silkscreen) and a data map for the signal shader. */
 export function pcbTextures() {
   if (pcbCache) return pcbCache;
   const W = PCB.w * PCB.ppc, H = PCB.h * PCB.ppc, S = PCB.ppc;

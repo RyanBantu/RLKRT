@@ -5,15 +5,15 @@ import { offsetKm, type LatLng } from '../geo';
 // Copernicus 90 m DEM; up to 100 coordinates per request.
 
 export const GRID_N = 9; // GRID_N × GRID_N samples
-export const GRID_HALF_KM = 12; // grid spans ±12 km around the centre
+export const GRID_HALF_KM = 12; // grid spans ±12 km around the center
 /** Wider, coarser grid that shades the whole sector on the globe. */
 export const SECTOR_GRID = { n: 10, halfKm: 48 };
 
 export type ElevationGrid = {
-  center: number; // metres
+  center: number; // meters
   n: number;
   halfKm: number;
-  /** Row-major, north row first, metres. */
+  /** Row-major, north row first, meters. */
   values: number[];
   points: LatLng[];
 };

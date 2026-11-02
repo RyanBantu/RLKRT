@@ -12,7 +12,7 @@ export function distanceKm(a: LatLng, b: LatLng) {
   return 2 * EARTH_KM * Math.asin(Math.sqrt(x));
 }
 
-/** Point reached by travelling `km` from `p` on initial bearing `deg` (0 = north). */
+/** Point reached by traveling `km` from `p` on initial bearing `deg` (0 = north). */
 export function destination(p: LatLng, km: number, deg: number): LatLng {
   const d = km / EARTH_KM;
   const b = deg * rad;
